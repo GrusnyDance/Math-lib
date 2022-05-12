@@ -17,6 +17,7 @@ long double pow_for_frac(double base, double exp) {
   long double total = 1;
   if (exp < 0) {
     exp *= -1;
+    // TO BE REPLACED WITH S21_LOG + S21_EXP FUNCTIONS
     total = expl(exp * log(base));
     total = 1 / total;
   } else if (exp > 0) {
