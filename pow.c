@@ -21,7 +21,6 @@ long double pow_for_frac(double base, double exp) {
     total = expl(exp * log(base));
     total = 1 / total;
   } else if (exp > 0) {
-    printf("i am line 23\n");
     total = expl(exp * log(base));
   }
   return total;
@@ -32,7 +31,6 @@ long double s21_pow(double base, double exp) {
   if (exp - (long long int)exp == 0) {
     res = pow_for_int(base, exp);
   } else {
-    printf("i am line 33\n");
     res = pow_for_frac(base, exp);
   }
 
