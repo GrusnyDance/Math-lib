@@ -4,9 +4,9 @@
 long double s21_ceil(double x) {
   long double res = 0;
   if (x >= 0)
-    res = (int)x + 1;
+    res = (long long int)x + 1;
   else
-    res = (int)x;
+    res = (long long int)x;
   return res;
 }
 
