@@ -2,7 +2,9 @@
 #include <stdlib.h>
 
 int main() {
-  int case_number = 10;
+  int case_number = 0;
+  printf("Enter the number of test cases:\n");
+  scanf("%d", &case_number);
   FILE *ptr;
   if ((ptr = fopen("test.check", "a")) == NULL) {
     printf("File cannot be opened");
