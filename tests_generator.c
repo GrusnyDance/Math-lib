@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
   int case_number = 10;
@@ -14,5 +15,6 @@ int main() {
     fprintf(ptr, "ck_assert_int_eq((s21_pow(num) - pow(num)) <= DIFF, 1)\n\n");
   }
   fclose(ptr);
+  system("checkmk clean_mode=1 test.check > test.c");
   return 0;
 }
