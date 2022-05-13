@@ -33,8 +33,4 @@ long double s21_sqrt(double x);
 
 long double s21_tan(double x);
 
-// functions that are not included in the library, but used
-
-unsigned long long s21_factorial(unsigned long long x)
-
 #endif  // SRC_S21_MATH_H_

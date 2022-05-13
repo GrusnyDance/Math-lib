@@ -1,9 +1,13 @@
 #include "s21_math.h"
 
-// Replace pow with s21_pow
 long double s21_sin(double x) {
-    double result = 0;
-    for (int n = 0; n < 13; n++)
-        result += (pow((-1), n) * pow(x, 2 * n + 1)) / (s21_factorial(2 * n + 1));
+    long double result = 0;
+    long double temp = x;
+    unsigned flag = 1;
+    while (flag < 44) {
+        result += temp;
+        flag += 2;
+        temp *= -(x * x) / ((flag - 1) * flag);
+    }
     return result;
 }
