@@ -1,5 +1,5 @@
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror -std=c11
+CC=gcc -fsanitize=address
+CFLAGS= -std=c11 #-Wall -Wextra -Werror
 GCOVFLAGS:=-fprofile-arcs -ftest-coverage
 LDFLAGS:=-lcheck -lgcov -fprofile-arcs --coverage
 ifeq ($(shell uname), Linux)
@@ -8,7 +8,7 @@ endif
 
 SOURCES:= s21_acos.c s21_asin.c s21_atan.c s21_ceil.c s21_cos.c	s21_exp.c \
 s21_fabs.c s21_floor.c s21_fmod.c s21_log.c s21_pow.c s21_sin.c s21_sqrt.c \
-s21_tan.c s21_factorial.c
+s21_tan.c s21_abs.c
 
 OBJECTS = $(addprefix obj/,$(SOURCES:.c=.o))
 OBJECTS_GCOV = $(addprefix gcov_obj/,$(SOURCES:.c=.o))
