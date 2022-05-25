@@ -27,6 +27,7 @@ int main() {
   if ((ptr = fopen("test.check", "a")) == NULL) {
     printf("File cannot be opened");
   } else {
+    fprintf(ptr, "#include \"s21_math.h\"\n");
     fprintf(ptr, "#include <math.h>\n#define DIFF pow(10, -7)\n\n");
   }
   for (int i = 0; i < case_number; i++) {
@@ -39,9 +40,9 @@ int main() {
     //   sign = 0;
     // }
     // if (sign) num *= -1;
-    fprintf(ptr, "#test %s%d\n", original_func, (i + 1));
+    fprintf(ptr, "#test %s_%d\n", original_func, (i + 1));
     fprintf(ptr, "long double num = %Lf;\n", num);
-    fprintf(ptr, "ck_assert_int_eq((%s(num) - %s(num)) <= DIFF, 1)\n\n",
+    fprintf(ptr, "ck_assert_int_eq((%s(num) - %s(num)) <= DIFF, 1);\n\n",
             test_func, original_func);
   }
   fclose(ptr);

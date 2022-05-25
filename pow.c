@@ -12,6 +12,7 @@ long double pow_for_int(double base, double exp) {
   }
   return total;
 }
+#include "s21_math.h"
 
 long double pow_for_frac(double base, double exp) {
   long double total = 1;
