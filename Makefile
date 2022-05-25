@@ -13,8 +13,8 @@ clean:
 	rm -f test.check
 	rm -f *.o
 
-test: test.o ceil.o s21_math.h
-	gcc test.o pow.o s21_math.h -o test -lcheck 
+test: test.o ceil.o floor.o pow.o s21_math.h
+	gcc test.o pow.o ceil.o floor.o s21_math.h -o test -lcheck 
 	# -lpthread -pthread -lrt -lm -lsubunit
 	./test
 

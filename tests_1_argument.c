@@ -32,16 +32,9 @@ int main() {
   }
   for (int i = 0; i < case_number; i++) {
     num = floor + ((long double)rand() / (RAND_MAX / (ceil - floor)));
-    // if (ceil < 0 && floor < 0) {
-    //   sign = 1;
-    // } else if (ceil < 0 || floor < 0) {
-    //   sign = (rand() % 2);
-    // } else {
-    //   sign = 0;
-    // }
-    // if (sign) num *= -1;
     fprintf(ptr, "#test %s_%d\n", original_func, (i + 1));
     fprintf(ptr, "long double num = %Lf;\n", num);
+    
     fprintf(ptr, "ck_assert_int_eq((%s(num) - %s(num)) <= DIFF, 1);\n\n",
             test_func, original_func);
   }

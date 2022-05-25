@@ -39,9 +39,14 @@ long double s21_pow(double base, double exp) {
 }
 
 // int main() {
-//   double x = -0.234;
-//   long double num = s21_pow(x, -1.2);
-//   printf("my num is %Lf\n", num);
-//   printf("num of standard func is %Lf\n", powl(x, -1.2));
+//   int nan = 0x7F800001;
+//   printf("%Lf\n", *(long double*)&nan);
+//   // return *(float*)&nan;
+//   double x = -4.322007;
+//   long double num = 0.022283;
+//   long double dif = powl(10, -7);
+//   printf("my num is %Lf\n", s21_pow(x, num));
+//   printf("num of standard func is %Lf\n", powl(x, num));
+//   printf("%d", ((s21_pow(x, num) - powl(x, num) == nan)));
 //   return 0;
 // }

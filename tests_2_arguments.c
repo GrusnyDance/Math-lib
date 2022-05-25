@@ -39,21 +39,18 @@ int main() {
   for (int i = 0; i < case_number; i++) {
     num1 = floor1 + ((long double)rand() / (RAND_MAX / (ceil1 - floor1)));
     num2 = floor2 + ((long double)rand() / (RAND_MAX / (ceil2 - floor2)));
-    // if (ceil < 0 && floor < 0) {
-    //   sign = 1;
-    // } else if (ceil < 0 || floor < 0) {
-    //   sign = (rand() % 2);
-    // } else {
-    //   sign = 0;
-    // }
-    // if (sign) num *= -1;
     fprintf(ptr, "#test %s_%d\n", original_func, (i + 1));
     fprintf(ptr, "long double num1 = %Lf;\n", num1);
     fprintf(ptr, "long double num2 = %Lf;\n", num2);
-    fprintf(
-        ptr,
-        "ck_assert_int_eq((%s(num1, num2) - %s(num1, num2)) <= DIFF, 1);\n\n",
-        test_func, original_func);
+    fprintf(ptr, "long double condition = (%s(num1, num2) - %s(num1, num2));\n",
+            test_func, original_func);
+    fprintf(ptr, "if (isnan((double)(%s(num1, num2)))) {\n", test_func);
+    fprintf(ptr, "    ck_assert_int_eq((isnan(%s(num1, num2)) != 0), 1);\n",
+            original_func);
+    fprintf(ptr, "} else\n");
+    fprintf(ptr,
+            "    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), "
+            "1);\n");
   }
   fclose(ptr);
   system("checkmk clean_mode=1 test.check > test.c");
