@@ -12,9 +12,9 @@ int main() {
   printf("Задай количество тестовых кейсов:\n");
   scanf("%d", &case_number);
   printf("Укажи имя СВОЕЙ функции:\n");
-  scanf("%s", &test_func);
+  scanf("%s", test_func);
   printf("Укажи имя ОРИГИНАЛЬНОЙ функции:\n");
-  scanf("%s", &original_func);
+  scanf("%s", original_func);
   printf("Задай НИЖНЮЮ границу тестовых значений:\n");
   scanf("%Lf", &floor);
   printf("Задай ВЕРХНЮЮ границу тестовых значений:\n");
