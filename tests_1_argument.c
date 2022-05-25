@@ -20,7 +20,6 @@ int main() {
   printf("Задай ВЕРХНЮЮ границу тестовых значений:\n");
   scanf("%Lf", &ceil);
   long double num;
-  int sign;
   srand(time(NULL));
 
   FILE *ptr;
@@ -34,9 +33,16 @@ int main() {
     num = floor + ((long double)rand() / (RAND_MAX / (ceil - floor)));
     fprintf(ptr, "#test %s_%d\n", original_func, (i + 1));
     fprintf(ptr, "long double num = %Lf;\n", num);
-    
-    fprintf(ptr, "ck_assert_int_eq((%s(num) - %s(num)) <= DIFF, 1);\n\n",
+    fprintf(ptr, "if (isnan((double)(%s(num)))) {\n", test_func);
+    fprintf(ptr, "    ck_assert_int_eq((isnan(%s(num)) != 0), 1);\n",
+            original_func);
+    fprintf(ptr, "} else {\n");
+    fprintf(ptr, "    long double condition = (%s(num) - %s(num));\n",
             test_func, original_func);
+    fprintf(ptr,
+            "    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);\n",
+            test_func, original_func);
+    fprintf(ptr, "}\n");
   }
   fclose(ptr);
   system("checkmk clean_mode=1 test.check > test.c");

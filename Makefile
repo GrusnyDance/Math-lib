@@ -12,6 +12,7 @@ clean:
 	rm -f test.c
 	rm -f test.check
 	rm -f *.o
+	rm -f test
 
 test: test.o ceil.o floor.o pow.o s21_math.h
 	gcc test.o pow.o ceil.o floor.o s21_math.h -o test -lcheck 
