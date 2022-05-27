@@ -1,27 +1,24 @@
 #include <limits.h>
+#include <math.h>
+#include <stdio.h>
 
 #include "s21_math.h"
 
-long double exp(double x) {
+long double s21_exp(double x) {
+  int sign = x < 0;
+  x = x < 0 ? -x : x;
   long double res = 0;
-  for (int i = 0; i < 15; i++) {
-    res += naturalPow(x, i) / factorial(i);
+  long long i = 1;
+  long double raw = 1;
+  while (fabsl(raw) > 1e-200) {
+    res += raw;
+    raw = (raw * x) / i++;
   }
-  return res;
+  return sign ? 1 / res : res;
 }
 
-long double naturalPow(double x, int n) {
-  long double res = 1;
-  if (n > 0) {
-    res *= naturalPow(x, --n) * x;
-  }
-  return res;
-}
-
-long long factorial(int n) {
-  long long res = 1;
-  if (n > 0) {
-    res *= n * factorial(--n);
-  }
-  return res;
-}
+// int main() {
+//   long double num = 1000;
+//   printf("%.50Lf\n%.50Lf", s21_exp(num), expl(num));
+//   return 0;
+// }
