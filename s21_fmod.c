@@ -14,8 +14,8 @@ long double s21_fmod(double x, double y) {
     return (long double) res;
 }
 
-int main() {
-    printf("%Lf\n", s21_fmod(12.1, 1));
-    printf("%f", fmod(12.1, 1));
-    return 0;
-}
+//int main() {
+//    printf("%Lf\n", s21_fmod(12.1, 1));
+//    printf("%f", fmod(12.1, 1));
+//    return 0;
+//}

@@ -51,16 +51,21 @@ long double s21_log2(double x) {
     }
 }
 
-int main() {
-    printf("%.12Lf\n", s21_log2(0.0000001));
-    printf("%.12f", log(0.0000001));
-    // int x = 130;
-    // int tmp = 1;
-    // int n = 0;
-    // while (tmp < x) {
-    //     tmp *= 2;
-    //     n++;
-    // }
-    // printf("%d", n);
-    return 0;
+long double s21_log3(double x) {
+    double alpha = (x - 1) / (x + 1);
+    double result = alpha;
+    double save = result * alpha * alpha;
+
+    for (int i = 2; i <= 1e7; i++) {
+        result += (1.0 / (2 * i - 1)) * save;
+        save = save * alpha * alpha;
+    }
+
+    return (long double) 2.0 * result;
 }
+//int main() {
+//    printf("%.12Lf\n", s21_log2(2100000000));
+//    printf("%.12f", log(2100000000));
+//
+//    return 0;
+//}
