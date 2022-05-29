@@ -227,117 +227,7 @@ START_TEST(floorl_10) {
 }
 END_TEST
 
-// TESTS DONE FOR ABS
-START_TEST(abs_1) {
-  int num = -3;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_2) {
-  int num = 12;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_3) {
-  int num = 11;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_4) {
-  int num = 25;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_5) {
-  int num = 20;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_6) {
-  int num = -7;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_7) {
-  int num = 97;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_8) {
-  int num = 87;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_9) {
-  int num = -82;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
-START_TEST(abs_10) {
-  int num = -24;
-  if (isnan((s21_abs(num)))) {
-    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
-  } else {
-    int condition = (s21_abs(num) - abs(num));
-    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-  }
-}
-END_TEST
-
+// ACOS
 START_TEST(acos_1) {
   long double num = -0.652056;
   if (isnan((double)(s21_acos(num)))) {
@@ -447,6 +337,7 @@ START_TEST(acos_10) {
   }
 }
 
+// ASIN
 START_TEST(asin_1) {
   long double num = 2651.948949;
   if (isnan((double)(s21_asin(num)))) {
@@ -502,366 +393,340 @@ START_TEST(asin_5) {
 }
 END_TEST
 
-START_TEST(sin_1)
-{
-long double num = -36864579.672396;
-if (isnan((double)(s21_sin(num)))) {
+// SIN
+START_TEST(sin_1) {
+  long double num = -36864579.672396;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_2)
-{
-long double num = 417009446.032815;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_2) {
+  long double num = 417009446.032815;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_3)
-{
-long double num = 677759473.527670;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_3) {
+  long double num = 677759473.527670;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_4)
-{
-long double num = -896528420.456000;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_4) {
+  long double num = -896528420.456000;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_5)
-{
-long double num = 46837396.010215;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_5) {
+  long double num = 46837396.010215;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_6)
-{
-long double num = -803885256.314597;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_6) {
+  long double num = -803885256.314597;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_7)
-{
-long double num = 1100497120.572486;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_7) {
+  long double num = 1100497120.572486;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_8)
-{
-long double num = 55105461.764664;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_8) {
+  long double num = 55105461.764664;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_9)
-{
-long double num = -1842504121.289823;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_9) {
+  long double num = -1842504121.289823;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(sin_10)
-{
-long double num = 1033233481.940456;
-if (isnan((double)(s21_sin(num)))) {
+START_TEST(sin_10) {
+  long double num = 1033233481.940456;
+  if (isnan((double)(s21_sin(num)))) {
     ck_assert_int_eq((isnan(sin(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_sin(num) - sin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_1)
-{
-long double num = -30071291.155215;
-if (isnan((double)(s21_cos(num)))) {
+// COS
+START_TEST(cos_1) {
+  long double num = -30071291.155215;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_2)
-{
-long double num = -1408190445.698886;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_2) {
+  long double num = -1408190445.698886;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_3)
-{
-long double num = 543179138.816511;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_3) {
+  long double num = 543179138.816511;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_4)
-{
-long double num = 1211786089.097981;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_4) {
+  long double num = 1211786089.097981;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_5)
-{
-long double num = -1511200530.226901;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_5) {
+  long double num = -1511200530.226901;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_6)
-{
-long double num = 1252688476.467826;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_6) {
+  long double num = 1252688476.467826;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_7)
-{
-long double num = 1935223994.746443;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_7) {
+  long double num = 1935223994.746443;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_8)
-{
-long double num = 1309679703.465514;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_8) {
+  long double num = 1309679703.465514;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_9)
-{
-long double num = -213223855.110455;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_9) {
+  long double num = -213223855.110455;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(cos_10)
-{
-long double num = 346667158.578833;
-if (isnan((double)(s21_cos(num)))) {
+START_TEST(cos_10) {
+  long double num = 346667158.578833;
+  if (isnan((double)(s21_cos(num)))) {
     ck_assert_int_eq((isnan(cos(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_cos(num) - cos(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_1)
-{
-long double num = 180765.325288;
-if (isnan((double)(s21_tan(num)))) {
+// TAN
+START_TEST(tan_1) {
+  long double num = 180765.325288;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_2)
-{
-long double num = -1877177.889402;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_2) {
+  long double num = -1877177.889402;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_3)
-{
-long double num = 10271212.826609;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_3) {
+  long double num = 10271212.826609;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_4)
-{
-long double num = -11726023.178420;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_4) {
+  long double num = -11726023.178420;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_5)
-{
-long double num = 728440.294381;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_5) {
+  long double num = 728440.294381;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_6)
-{
-long double num = 2896027.668796;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_6) {
+  long double num = 2896027.668796;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_7)
-{
-long double num = -6462970.537349;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_7) {
+  long double num = -6462970.537349;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_8)
-{
-long double num = 16854178.773637;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_8) {
+  long double num = 16854178.773637;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_9)
-{
-long double num = -11817351.482724;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_9) {
+  long double num = -11817351.482724;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
-START_TEST(tan_10)
-{
-long double num = -14226370.134496;
-if (isnan((double)(s21_tan(num)))) {
+START_TEST(tan_10) {
+  long double num = -14226370.134496;
+  if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
-} else {
+  } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
-}
+  }
 }
 END_TEST
 
+// ASIN
 START_TEST(asin_6) {
   long double num = -525894.660282;
   if (isnan((double)(s21_asin(num)))) {
@@ -917,6 +782,7 @@ START_TEST(asin_10) {
 }
 END_TEST
 
+// ATAN
 START_TEST(atan_1) {
   long double num = 8.114755;
   if (isnan((double)(s21_atan(num)))) {
@@ -1027,6 +893,328 @@ START_TEST(atan_10) {
 }
 END_TEST
 
+// EXP VLAD
+START_TEST(s21_exp_1) {
+  double num = 2545.378460;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_2) {
+  double num = 575.783669;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_3) {
+  double num = 5396.117940;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_4) {
+  double num = 8654.213406;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_5) {
+  double num = 5264.714382;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_6) {
+  double num = 1954.624764;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_7) {
+  double num = 78.413939;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_8) {
+  double num = 8903.064952;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_9) {
+  double num = 6312.642795;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_10) {
+  double num = 87.449188;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+// ABS VLAD
+START_TEST(s21_abs_1) {
+  int num = -4657;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_2) {
+  int num = -3425;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_3) {
+  int num = 1106;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_4) {
+  int num = 2419;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_5) {
+  int num = -9641;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_6) {
+  int num = -7500;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_7) {
+  int num = 1692;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_8) {
+  int num = -1808;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_9) {
+  int num = -1144;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
+START_TEST(s21_abs_10) {
+  int num = -6051;
+  ck_assert_int_eq(abs(num), s21_abs(num));
+}
+END_TEST
+
 int main(void) {
   Suite *s1 = suite_create("Core");
   TCase *tc1_1 = tcase_create("Core");
@@ -1056,17 +1244,6 @@ int main(void) {
   tcase_add_test(tc1_1, floorl_8);
   tcase_add_test(tc1_1, floorl_9);
   tcase_add_test(tc1_1, floorl_10);
-  // ABS
-  tcase_add_test(tc1_1, abs_1);
-  tcase_add_test(tc1_1, abs_2);
-  tcase_add_test(tc1_1, abs_3);
-  tcase_add_test(tc1_1, abs_4);
-  tcase_add_test(tc1_1, abs_5);
-  tcase_add_test(tc1_1, abs_6);
-  tcase_add_test(tc1_1, abs_7);
-  tcase_add_test(tc1_1, abs_8);
-  tcase_add_test(tc1_1, abs_9);
-  tcase_add_test(tc1_1, abs_10);
   // ACOS
   tcase_add_test(tc1_1, acos_1);
   tcase_add_test(tc1_1, acos_2);
@@ -1133,6 +1310,28 @@ int main(void) {
   tcase_add_test(tc1_1, atan_8);
   tcase_add_test(tc1_1, atan_9);
   tcase_add_test(tc1_1, atan_10);
+  // EXP
+  tcase_add_test(tc1_1, s21_exp_1);
+  tcase_add_test(tc1_1, s21_exp_2);
+  tcase_add_test(tc1_1, s21_exp_3);
+  tcase_add_test(tc1_1, s21_exp_4);
+  tcase_add_test(tc1_1, s21_exp_5);
+  tcase_add_test(tc1_1, s21_exp_6);
+  tcase_add_test(tc1_1, s21_exp_7);
+  tcase_add_test(tc1_1, s21_exp_8);
+  tcase_add_test(tc1_1, s21_exp_9);
+  tcase_add_test(tc1_1, s21_exp_10);
+  // ABS
+  tcase_add_test(tc1_1, s21_abs_1);
+  tcase_add_test(tc1_1, s21_abs_2);
+  tcase_add_test(tc1_1, s21_abs_3);
+  tcase_add_test(tc1_1, s21_abs_4);
+  tcase_add_test(tc1_1, s21_abs_5);
+  tcase_add_test(tc1_1, s21_abs_6);
+  tcase_add_test(tc1_1, s21_abs_7);
+  tcase_add_test(tc1_1, s21_abs_8);
+  tcase_add_test(tc1_1, s21_abs_9);
+  tcase_add_test(tc1_1, s21_abs_10);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
