@@ -1,5 +1,5 @@
 #include "s21_math.h"
-
+#include <stdlib.h>
 #include <check.h>
 #include <math.h>
 #define DIFF pow(10, -7)
@@ -236,6 +236,116 @@ if (isnan((double)(s21_floor(num)))) {
 }
 END_TEST
 
+// TESTS DONE FOR ABS
+START_TEST(abs_1) {
+  int num = -3;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_2) {
+  int num = 12;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_3) {
+  int num = 11;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_4) {
+  int num = 25;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_5) {
+  int num = 20;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_6) {
+  int num = -7;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_7) {
+  int num = 97;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_8) {
+  int num = 87;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_9) {
+  int num = -82;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(abs_10) {
+  int num = -24;
+  if (isnan((s21_abs(num)))) {
+    ck_assert_int_eq((isnan(abs(num)) != 0), 1);
+  } else {
+    int condition = (s21_abs(num) - abs(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
 
 int main(void) {
   Suite *s1 = suite_create("Core");
@@ -266,7 +376,17 @@ int main(void) {
   tcase_add_test(tc1_1, floorl_8);
   tcase_add_test(tc1_1, floorl_9);
   tcase_add_test(tc1_1, floorl_10);
-  // POW
+  // ABS
+  tcase_add_test(tc1_1, abs_1);
+  tcase_add_test(tc1_1, abs_2);
+  tcase_add_test(tc1_1, abs_3);
+  tcase_add_test(tc1_1, abs_4);
+  tcase_add_test(tc1_1, abs_5);
+  tcase_add_test(tc1_1, abs_6);
+  tcase_add_test(tc1_1, abs_7);
+  tcase_add_test(tc1_1, abs_8);
+  tcase_add_test(tc1_1, abs_9);
+  tcase_add_test(tc1_1, abs_10);
 
 
   srunner_run_all(sr, CK_ENV);
