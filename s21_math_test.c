@@ -1215,6 +1215,117 @@ START_TEST(s21_abs_10) {
 }
 END_TEST
 
+// FABS
+START_TEST(fabsl_1) {
+  long double num = 57733.935797;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_2) {
+  long double num = 334258.932310;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_3) {
+  long double num = -110124.661173;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_4) {
+  long double num = -865180.331220;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_5) {
+  long double num = 914173.193236;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_6) {
+  long double num = 508858.716818;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_7) {
+  long double num = 388453.559665;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_8) {
+  long double num = 738977.293362;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_9) {
+  long double num = -8630.458735;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_10) {
+  long double num = 947880.037105;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 int main(void) {
   Suite *s1 = suite_create("Core");
   TCase *tc1_1 = tcase_create("Core");
@@ -1332,6 +1443,17 @@ int main(void) {
   tcase_add_test(tc1_1, s21_abs_8);
   tcase_add_test(tc1_1, s21_abs_9);
   tcase_add_test(tc1_1, s21_abs_10);
+  // FABS
+  tcase_add_test(tc1_1, fabsl_1);
+  tcase_add_test(tc1_1, fabsl_2);
+  tcase_add_test(tc1_1, fabsl_3);
+  tcase_add_test(tc1_1, fabsl_4);
+  tcase_add_test(tc1_1, fabsl_5);
+  tcase_add_test(tc1_1, fabsl_6);
+  tcase_add_test(tc1_1, fabsl_7);
+  tcase_add_test(tc1_1, fabsl_8);
+  tcase_add_test(tc1_1, fabsl_9);
+  tcase_add_test(tc1_1, fabsl_10);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
