@@ -1,7 +1,7 @@
 CC=gcc -fsanitize=address
 CFLAGS= -std=c11 #-Wall -Wextra -Werror
 GCOVFLAGS:=-fprofile-arcs -ftest-coverage
-LDFLAGS:=-lcheck -lgcov -fprofile-arcs --coverage
+LDFLAGS:=-lcheck -fprofile-arcs --coverage
 ifeq ($(shell uname), Linux)
 LDFLAGS +=-pthread -lrt -lm -lsubunit
 endif
@@ -70,9 +70,9 @@ generate2:
 	./a.out
 
 check_me: $(SOURCES) test.c s21_math.h
-	gcc $(SOURCES) test.c s21_math.h -o test -lcheck
+	gcc $(SOURCES) test.c s21_math.h -lcheck
 	# -lpthread -pthread -lrt -lm -lsubunit
-	./test
+	./a.out
 
 # %.o: %.c
 # 	gcc -c $< 

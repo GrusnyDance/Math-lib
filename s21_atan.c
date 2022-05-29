@@ -1,13 +1,4 @@
 #include "s21_math.h"
-// #include <stdio.h>
-// #include <math.h>
-// #define S21_PI 3.14159265358979323846
-// #define S21_NAN 0.0 / 0.0
-// #define S21_EPS 1e-17
-
-// long double s21_fabs(long double x) {
-//   return x < 0 ? x *= -1. : x;
-// }
 
 long double atan_calc(double x) {
   long double result = x, atan = x, n = 1;
@@ -36,10 +27,3 @@ long double s21_atan(double x) {
   }
   return result;
 }
-
-
-// int main () {
-//   for (double i = -1; i <= 1; i += 0.01) {
-//     printf("%f: %.17Lf - %.17lf\n",i, s21_atan(i), atan(i));
-//   }
-// }

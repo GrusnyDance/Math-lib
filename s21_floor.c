@@ -13,9 +13,3 @@ long double s21_floor(double x) {
   }
   return res;
 }
-
-// int main() {
-//   long double a = -6.199592;
-//   printf("my func is %Lf\n", s21_floor(a));
-//   printf("original func is %Lf\n", floorl(a));
-// }

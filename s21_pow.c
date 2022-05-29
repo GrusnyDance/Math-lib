@@ -1,6 +1,3 @@
-// #include <math.h>
-// #include <stdio.h>
-
 #include "s21_math.h"
 
 long double pow_for_int(double base, double exp) {
@@ -39,11 +36,3 @@ long double s21_pow(double base, double exp) {
 
   return res;
 }
-
-// int main() {
-//   double x = -1.194551;
-//   long double num = 3.187354;
-//   printf("my num is %Lf\n", s21_pow(x, num));
-//   printf("num of standard func is %Lf\n", powl(x, num));
-//   return 0;
-// }

@@ -21,6 +21,5 @@ long double s21_asin(double x) {
         result = -S21_PI / 2;
     else
         result = asin_calc(x);
-//    result = atan(x / sqrt(1 - x * x));
     return result;
 }
