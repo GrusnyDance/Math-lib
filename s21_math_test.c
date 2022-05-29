@@ -777,6 +777,116 @@ START_TEST(asin_10) {
 }
 END_TEST
 
+START_TEST(atan_1) {
+  long double num = 8.114755;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_2) {
+  long double num = 384.682105;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_3) {
+  long double num = -647.867378;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_4) {
+  long double num = -707.016726;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_5) {
+  long double num = -830.112000;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_6) {
+  long double num = 307.617397;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_7) {
+  long double num = 125.586760;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_8) {
+  long double num = 736.672348;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_9) {
+  long double num = -747.843463;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_10) {
+  long double num = 994.919772;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 int main(void) {
   Suite *s1 = suite_create("Core");
   TCase *tc1_1 = tcase_create("Core");
@@ -861,7 +971,17 @@ int main(void) {
   tcase_add_test(tc1_1, asin_8);
   tcase_add_test(tc1_1, asin_9);
   tcase_add_test(tc1_1, asin_10);
-  
+  // ATAN
+  tcase_add_test(tc1_1, atan_1);
+  tcase_add_test(tc1_1, atan_2);
+  tcase_add_test(tc1_1, atan_3);
+  tcase_add_test(tc1_1, atan_4);
+  tcase_add_test(tc1_1, atan_5);
+  tcase_add_test(tc1_1, atan_6);
+  tcase_add_test(tc1_1, atan_7);
+  tcase_add_test(tc1_1, atan_8);
+  tcase_add_test(tc1_1, atan_9);
+  tcase_add_test(tc1_1, atan_10);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
