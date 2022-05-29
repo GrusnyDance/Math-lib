@@ -74,9 +74,9 @@ check_me: $(SOURCES) test.c s21_math.h
 	# -lpthread -pthread -lrt -lm -lsubunit
 	./a.out
 
-# %.o: %.c
-# 	gcc -c $< 
-# 	# -lpthread -pthread -lrt -lm -lsubunit
+%.o: %.c
+	gcc -c $< 
+	# -lpthread -pthread -lrt -lm -lsubunit
 
 
 
@@ -121,3 +121,49 @@ check_me: $(SOURCES) test.c s21_math.h
 # 	cp ../materials/linters/CPPLINT.cfg ./
 # 	python3 ../materials/linters/cpplint.py --extensions=c */*.h */*.c
 # 	rm -f CPPLINT.cfg
+
+
+
+
+
+# LYOSHA CAME TO HELP
+
+# NAME	=	s21_math.a
+
+# CC = gcc
+# CFLAGS = -Wall -Werror -Wextra
+
+# RM = rm -rf
+
+# AR	=	ar rcs
+
+# SRC = s21_acos.c \
+# 		s21_asin.c \
+# 		s21_atan.c \
+# 		s21_ceil.c \
+# 		s21_cos.c \
+# 		s21_exp.c \
+# 		s21_fabs.c \
+# 		s21_floor.c \
+# 		s21_fmod.c \
+# 		s21_log.c \
+# 		s21_pow.c \
+# 		s21_sin.c \
+# 		s21_sqrt.c \
+# 		s21_tan.c \
+# 		s21_abs.c
+
+# OBJ	=		$(SRC:.c=.o)
+
+# all:		$(NAME)
+
+# $(NAME):	$(OBJ)
+# 		$(AR) $(NAME) $(OBJ)
+
+# %.o:	%.c s21_math.h
+# 	$(CC) $(CFLAGS) -c $< -o $@
+
+# clean:
+# 	$(RM) $(OBJ) $(NAME)
+
+# rebuild: clean all
