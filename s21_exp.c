@@ -1,6 +1,6 @@
-#include <limits.h>
-#include <math.h>
-#include <stdio.h>
+// #include <limits.h>
+// #include <math.h>
+// #include <stdio.h>
 
 #include "s21_math.h"
 

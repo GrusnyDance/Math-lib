@@ -1,6 +1,7 @@
 #ifndef SRC_S21_MATH_H_
 #define SRC_S21_MATH_H_
 
+#include <limits.h>
 #define S21_PI 3.14159265358979323846
 #define S21_NAN 0.0 / 0.0
 #define S21_EPS 1e-17
