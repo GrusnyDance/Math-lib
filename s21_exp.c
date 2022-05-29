@@ -10,7 +10,8 @@ long double s21_exp(double x) {
   long double res = 0;
   long long i = 1;
   long double raw = 1;
-  while (fabsl(raw) > 1e-200) {
+  while (s21_fabs(raw) > 1e-200) {
+  // while (fabsl(raw) > 1e-200) {
     res += raw;
     raw = (raw * x) / i++;
   }

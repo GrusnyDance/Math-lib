@@ -1,6 +1,8 @@
 // #include <math.h>
 // #include <stdio.h>
 
+#include "s21_math.h"
+
 long double pow_for_int(double base, double exp) {
   long double total = 1;
   if (exp < 0) {
@@ -12,7 +14,6 @@ long double pow_for_int(double base, double exp) {
   }
   return total;
 }
-#include "s21_math.h"
 
 long double pow_for_frac(double base, double exp) {
   long double total = 1;
@@ -22,14 +23,15 @@ long double pow_for_frac(double base, double exp) {
     total = s21_exp(exp * s21_log(base));
     total = 1 / total;
   } else if (exp > 0) {
-    total = expl(exp * log(base));
+    total = s21_exp(exp * s21_log(base));
   }
   return total;
 }
 
 long double s21_pow(double base, double exp) {
   long double res = 0;
-  if (exp - (long long int)exp == 0) {
+  long double condition = exp - (long long int)exp;
+  if (condition <= 0.0000001 && condition >= -0.0000001) {
     res = pow_for_int(base, exp);
   } else {
     res = pow_for_frac(base, exp);
@@ -39,14 +41,9 @@ long double s21_pow(double base, double exp) {
 }
 
 // int main() {
-//   int nan = 0x7F800001;
-//   printf("%Lf\n", *(long double*)&nan);
-//   // return *(float*)&nan;
-//   double x = -4.322007;
-//   long double num = 0.022283;
-//   long double dif = powl(10, -7);
+//   double x = -1.194551;
+//   long double num = 3.187354;
 //   printf("my num is %Lf\n", s21_pow(x, num));
 //   printf("num of standard func is %Lf\n", powl(x, num));
-//   printf("%d", ((s21_pow(x, num) - powl(x, num) == nan)));
 //   return 0;
 // }

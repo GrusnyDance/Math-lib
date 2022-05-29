@@ -43,6 +43,7 @@ clean:
 	rm -f */*.o
 	rm -f report
 	rm -f gcov_obj/*.gc*
+	rm -f *.gc*
 	rm -f ./test
 	rm -f -r out
 	rm -f *.o*
@@ -50,8 +51,8 @@ clean:
 	rm -f .DS_Store
 	rm -f *.a
 	rm -f CPPLINT.cfg
-	rm -f test.c
 	rm -f test.check
+	rm -f test.c
 	rm -f test
 
 
@@ -68,8 +69,8 @@ generate2:
 	gcc tests_2_arguments.c
 	./a.out
 
-test_gen: s21_math.a s21_math.h
-	gcc s21_math.a s21_math.h -o test -lcheck 
+check_me: $(SOURCES) test.c s21_math.h
+	gcc $(SOURCES) test.c s21_math.h -o test -lcheck
 	# -lpthread -pthread -lrt -lm -lsubunit
 	./test
 

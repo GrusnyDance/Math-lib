@@ -31,7 +31,7 @@ int main() {
 
   FILE *ptr;
   if ((ptr = fopen("test.check", "a")) == NULL) {
-    printf("File cannot be opened");
+    printf("File cannot be opened\n");
   } else {
     fprintf(ptr, "#include \"s21_math.h\"\n");
     fprintf(ptr, "#include <math.h>\n#define DIFF pow(10, -7)\n\n");
@@ -47,10 +47,11 @@ int main() {
     fprintf(ptr, "if (isnan((double)(%s(num1, num2)))) {\n", test_func);
     fprintf(ptr, "    ck_assert_int_eq((isnan(%s(num1, num2)) != 0), 1);\n",
             original_func);
-    fprintf(ptr, "} else\n");
+    fprintf(ptr, "} else {\n");
     fprintf(ptr,
             "    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), "
             "1);\n");
+    fprintf(ptr, "}\n");
   }
   fclose(ptr);
   system("checkmk clean_mode=1 test.check > test.c");

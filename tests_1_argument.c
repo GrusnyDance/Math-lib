@@ -24,7 +24,7 @@ int main() {
 
   FILE *ptr;
   if ((ptr = fopen("test.check", "a")) == NULL) {
-    printf("File cannot be opened");
+    printf("File cannot be opened\n");
   } else {
     fprintf(ptr, "#include \"s21_math.h\"\n");
     fprintf(ptr, "#include <math.h>\n#define DIFF pow(10, -7)\n\n");
