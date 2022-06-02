@@ -89,7 +89,7 @@ clean:
 		gcov_obj/*.info \
 		*.a \
 		CPPLINT.cfg \
-		test* \
+		test.* \
 		test \
 
 .PHONY: all clean rebuild lint

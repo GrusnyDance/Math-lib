@@ -1549,6 +1549,127 @@ START_TEST(sqrt_10) {
 }
 END_TEST
 
+// POWL
+START_TEST(powl_1) {
+  long double num1 = -8.574862;
+  long double num2 = 7.993099;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_2) {
+  long double num1 = 8.181928;
+  long double num2 = -1.950393;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_3) {
+  long double num1 = -8.140663;
+  long double num2 = -6.153770;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_4) {
+  long double num1 = -8.190569;
+  long double num2 = 4.068785;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_5) {
+  long double num1 = -3.313375;
+  long double num2 = -0.682443;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_6) {
+  long double num1 = -7.730617;
+  long double num2 = 1.083946;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_7) {
+  long double num1 = -3.049562;
+  long double num2 = 8.660237;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_8) {
+  long double num1 = -9.647734;
+  long double num2 = 2.021467;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_9) {
+  long double num1 = -1.321712;
+  long double num2 = 2.457203;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_10) {
+  long double num1 = 6.233734;
+  long double num2 = -0.349780;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
 int main(void) {
   Suite *s1 = suite_create("Core");
   TCase *tc1_1 = tcase_create("Core");
@@ -1645,27 +1766,27 @@ int main(void) {
   tcase_add_test(tc1_1, atan_9);
   tcase_add_test(tc1_1, atan_10);
   // EXP VLAD
-  // tcase_add_test(tc1_1, s21_exp_1);
-  // tcase_add_test(tc1_1, s21_exp_2);
-  // tcase_add_test(tc1_1, s21_exp_3);
-  // tcase_add_test(tc1_1, s21_exp_4);
-  // tcase_add_test(tc1_1, s21_exp_5);
-  // tcase_add_test(tc1_1, s21_exp_6);
-  // tcase_add_test(tc1_1, s21_exp_7);
-  // tcase_add_test(tc1_1, s21_exp_8);
-  // tcase_add_test(tc1_1, s21_exp_9);
-  // tcase_add_test(tc1_1, s21_exp_10);
-  // // ABS VLAD
-  // tcase_add_test(tc1_1, s21_abs_1);
-  // tcase_add_test(tc1_1, s21_abs_2);
-  // tcase_add_test(tc1_1, s21_abs_3);
-  // tcase_add_test(tc1_1, s21_abs_4);
-  // tcase_add_test(tc1_1, s21_abs_5);
-  // tcase_add_test(tc1_1, s21_abs_6);
-  // tcase_add_test(tc1_1, s21_abs_7);
-  // tcase_add_test(tc1_1, s21_abs_8);
-  // tcase_add_test(tc1_1, s21_abs_9);
-  // tcase_add_test(tc1_1, s21_abs_10);
+  tcase_add_test(tc1_1, s21_exp_1);
+  tcase_add_test(tc1_1, s21_exp_2);
+  tcase_add_test(tc1_1, s21_exp_3);
+  tcase_add_test(tc1_1, s21_exp_4);
+  tcase_add_test(tc1_1, s21_exp_5);
+  tcase_add_test(tc1_1, s21_exp_6);
+  tcase_add_test(tc1_1, s21_exp_7);
+  tcase_add_test(tc1_1, s21_exp_8);
+  tcase_add_test(tc1_1, s21_exp_9);
+  tcase_add_test(tc1_1, s21_exp_10);
+  // ABS VLAD
+  tcase_add_test(tc1_1, s21_abs_1);
+  tcase_add_test(tc1_1, s21_abs_2);
+  tcase_add_test(tc1_1, s21_abs_3);
+  tcase_add_test(tc1_1, s21_abs_4);
+  tcase_add_test(tc1_1, s21_abs_5);
+  tcase_add_test(tc1_1, s21_abs_6);
+  tcase_add_test(tc1_1, s21_abs_7);
+  tcase_add_test(tc1_1, s21_abs_8);
+  tcase_add_test(tc1_1, s21_abs_9);
+  tcase_add_test(tc1_1, s21_abs_10);
   // FABS
   tcase_add_test(tc1_1, fabsl_1);
   tcase_add_test(tc1_1, fabsl_2);
@@ -1700,6 +1821,16 @@ int main(void) {
   tcase_add_test(tc1_1, sqrt_9);
   tcase_add_test(tc1_1, sqrt_10);
   // POW
+  tcase_add_test(tc1_1, powl_1);
+  tcase_add_test(tc1_1, powl_2);
+  tcase_add_test(tc1_1, powl_3);
+  tcase_add_test(tc1_1, powl_4);
+  tcase_add_test(tc1_1, powl_5);
+  tcase_add_test(tc1_1, powl_6);
+  tcase_add_test(tc1_1, powl_7);
+  tcase_add_test(tc1_1, powl_8);
+  tcase_add_test(tc1_1, powl_9);
+  tcase_add_test(tc1_1, powl_10);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
