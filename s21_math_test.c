@@ -1326,6 +1326,7 @@ START_TEST(fabsl_10) {
 }
 END_TEST
 
+// LOG
 START_TEST(logl_1) {
   long double num = -388008.329732;
   if (isnan((double)(s21_log(num)))) {
@@ -1436,6 +1437,7 @@ START_TEST(logl_10) {
 }
 END_TEST
 
+// SQRT
 START_TEST(sqrt_1) {
   long double num = -44.723864;
   if (isnan((double)(s21_sqrt(num)))) {
