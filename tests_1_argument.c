@@ -40,8 +40,7 @@ int main() {
     fprintf(ptr, "    long double condition = (%s(num) - %s(num));\n",
             test_func, original_func);
     fprintf(ptr,
-            "    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);\n",
-            test_func, original_func);
+            "    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);\n");
     fprintf(ptr, "}\n");
   }
   fclose(ptr);
