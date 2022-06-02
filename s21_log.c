@@ -2,12 +2,19 @@
 
 long double s21_taylor_log(double x) {
     long double result = x, member = x;
-    for (int i = 2; s21_fabs(member) > S21_EPS; i++) {
-        member *= -((i - 1) * (x / i));
+    for (int flag = 2; s21_fabs(member) > S21_EPS; flag++) {
+        member *= -((flag - 1) * (x / flag));
         result += member;
     }
     return result;
 }
+
+// log(d) is found using a Taylor series expanded around x = 1.
+// x = 10^n * 2^m * d
+// log(x) = n * log(10) + m * log(2) + log(d)
+// But base 10 is useless, we have numbers stored as order + mantissa
+// Аnd we need to change the order keeping mantissa to get in the range
+// from 0 to 1
 
 long double s21_log(double x) {
     long double result;
