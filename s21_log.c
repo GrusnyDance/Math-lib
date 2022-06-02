@@ -2,8 +2,8 @@
 
 long double s21_taylor_log(double x) {
     long double result = x, member = x;
-    for (int i = 2; s21_fabs(member) > S21_EPS; i++) {
-        member *= -((i - 1) * (x / i));
+    for (int flag = 2; s21_fabs(member) > S21_EPS; flag++) {
+        member *= -((flag - 1) * (x / flag));
         result += member;
     }
     return result;
