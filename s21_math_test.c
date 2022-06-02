@@ -336,6 +336,7 @@ START_TEST(acos_10) {
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
   }
 }
+END_TEST
 
 // ASIN
 START_TEST(asin_1) {
@@ -1698,6 +1699,7 @@ int main(void) {
   tcase_add_test(tc1_1, sqrt_8);
   tcase_add_test(tc1_1, sqrt_9);
   tcase_add_test(tc1_1, sqrt_10);
+  // POW
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
