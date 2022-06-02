@@ -48,10 +48,10 @@ gcov_report: test
 	lcov/bin/./genhtml gcov_obj/coverage.info --output-directory out
 
 gcov_obj/%.o: %.c
-	$(CC) $(CFLAGS) $(GCOVFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(GCOVFLAGS) -c $< -o $@
 
 obj/%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 lint:
 	cp ../materials/linters/CPPLINT.cfg ./

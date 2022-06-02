@@ -1644,28 +1644,28 @@ int main(void) {
   tcase_add_test(tc1_1, atan_8);
   tcase_add_test(tc1_1, atan_9);
   tcase_add_test(tc1_1, atan_10);
-  // EXP
-  tcase_add_test(tc1_1, s21_exp_1);
-  tcase_add_test(tc1_1, s21_exp_2);
-  tcase_add_test(tc1_1, s21_exp_3);
-  tcase_add_test(tc1_1, s21_exp_4);
-  tcase_add_test(tc1_1, s21_exp_5);
-  tcase_add_test(tc1_1, s21_exp_6);
-  tcase_add_test(tc1_1, s21_exp_7);
-  tcase_add_test(tc1_1, s21_exp_8);
-  tcase_add_test(tc1_1, s21_exp_9);
-  tcase_add_test(tc1_1, s21_exp_10);
-  // ABS
-  tcase_add_test(tc1_1, s21_abs_1);
-  tcase_add_test(tc1_1, s21_abs_2);
-  tcase_add_test(tc1_1, s21_abs_3);
-  tcase_add_test(tc1_1, s21_abs_4);
-  tcase_add_test(tc1_1, s21_abs_5);
-  tcase_add_test(tc1_1, s21_abs_6);
-  tcase_add_test(tc1_1, s21_abs_7);
-  tcase_add_test(tc1_1, s21_abs_8);
-  tcase_add_test(tc1_1, s21_abs_9);
-  tcase_add_test(tc1_1, s21_abs_10);
+  // EXP VLAD
+  // tcase_add_test(tc1_1, s21_exp_1);
+  // tcase_add_test(tc1_1, s21_exp_2);
+  // tcase_add_test(tc1_1, s21_exp_3);
+  // tcase_add_test(tc1_1, s21_exp_4);
+  // tcase_add_test(tc1_1, s21_exp_5);
+  // tcase_add_test(tc1_1, s21_exp_6);
+  // tcase_add_test(tc1_1, s21_exp_7);
+  // tcase_add_test(tc1_1, s21_exp_8);
+  // tcase_add_test(tc1_1, s21_exp_9);
+  // tcase_add_test(tc1_1, s21_exp_10);
+  // // ABS VLAD
+  // tcase_add_test(tc1_1, s21_abs_1);
+  // tcase_add_test(tc1_1, s21_abs_2);
+  // tcase_add_test(tc1_1, s21_abs_3);
+  // tcase_add_test(tc1_1, s21_abs_4);
+  // tcase_add_test(tc1_1, s21_abs_5);
+  // tcase_add_test(tc1_1, s21_abs_6);
+  // tcase_add_test(tc1_1, s21_abs_7);
+  // tcase_add_test(tc1_1, s21_abs_8);
+  // tcase_add_test(tc1_1, s21_abs_9);
+  // tcase_add_test(tc1_1, s21_abs_10);
   // FABS
   tcase_add_test(tc1_1, fabsl_1);
   tcase_add_test(tc1_1, fabsl_2);
