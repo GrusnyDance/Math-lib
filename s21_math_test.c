@@ -1446,8 +1446,6 @@ START_TEST(sqrt_1) {
     ck_assert_int_eq((isnan(sqrt(num)) != 0), 1);
   } else {
     long double condition = (s21_sqrt(num) - sqrt(num));
-    // printf("%.50Lf\n%.50lf\n", s21_log(num), log(num));
-    printf("%.50Lf\n%.50lf\n", s21_sqrt(num), sqrt(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
   }
 }
