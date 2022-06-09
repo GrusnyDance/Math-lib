@@ -24,6 +24,8 @@ long double s21_atan(double x) {
     result = S21_PI / 2 - atan_calc(1 / x);
   } else if (x < -1.0) {
     result = -S21_PI / 2 - atan_calc(1 / x);
+  } else if (S21_ISNAN(x)) {
+    result = S21_NAN;
   }
   return result;
 }

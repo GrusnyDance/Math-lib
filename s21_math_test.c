@@ -117,6 +117,43 @@ START_TEST(ceill_10) {
 }
 END_TEST
 
+START_TEST(ceill_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_ceil(num)))) {
+    ck_assert_int_eq((isnan(ceill(num)) != 0), 1);
+  } else {
+    long double condition = (s21_ceil(num) - ceill(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(ceill_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_ceil(num)))) {
+    ck_assert_int_eq((isnan(ceill(num)) != 0), 1);
+  } else if (isinf((double)(s21_ceil(num)))) {
+    ck_assert_int_eq((isinf(ceill(num)) != 0), 1);
+  } else {
+    long double condition = (s21_ceil(num) - ceill(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(ceill_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_ceil(num)))) {
+    ck_assert_int_eq((isnan(ceill(num)) != 0), 1);
+  } else if (isinf((double)(s21_ceil(num)))) {
+    ck_assert_int_eq((isinf(ceill(num)) != 0), 1);
+  } else {
+    long double condition = (s21_ceil(num) - ceill(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // TESTS DONE FOR FLOOR
 START_TEST(floorl_1) {
   long double num = -145.125555;
@@ -221,6 +258,43 @@ START_TEST(floorl_10) {
   long double num = -291.982749;
   if (isnan((double)(s21_floor(num)))) {
     ck_assert_int_eq((isnan(floorl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_floor(num) - floorl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(floorl_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_floor(num)))) {
+    ck_assert_int_eq((isnan(floorl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_floor(num) - floorl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(floorl_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_floor(num)))) {
+    ck_assert_int_eq((isnan(floorl(num)) != 0), 1);
+  } else if (isinf((double)(s21_floor(num)))) {
+    ck_assert_int_eq((isinf(floorl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_floor(num) - floorl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(floorl_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_floor(num)))) {
+    ck_assert_int_eq((isnan(floorl(num)) != 0), 1);
+  } else if (isinf((double)(s21_floor(num)))) {
+    ck_assert_int_eq((isinf(floorl(num)) != 0), 1);
   } else {
     long double condition = (s21_floor(num) - floorl(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
@@ -339,6 +413,43 @@ START_TEST(acos_10) {
 }
 END_TEST
 
+START_TEST(acos_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_acos(num)))) {
+    ck_assert_int_eq((isnan(acos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_acos(num) - acos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(acos_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_acos(num)))) {
+    ck_assert_int_eq((isnan(acos(num)) != 0), 1);
+  } else if (isinf((double)(s21_acos(num)))) {
+    ck_assert_int_eq((isinf(acos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_acos(num) - acos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(acos_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_acos(num)))) {
+    ck_assert_int_eq((isnan(acos(num)) != 0), 1);
+  } else if (isinf((double)(s21_acos(num)))) {
+    ck_assert_int_eq((isinf(acos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_acos(num) - acos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // ASIN
 START_TEST(asin_1) {
   long double num = 2651.948949;
@@ -388,6 +499,43 @@ START_TEST(asin_5) {
   long double num = -701643.713611;
   if (isnan((double)(s21_asin(num)))) {
     ck_assert_int_eq((isnan(asin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_asin(num) - asin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(asin_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_asin(num)))) {
+    ck_assert_int_eq((isnan(asin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_asin(num) - asin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(asin_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_asin(num)))) {
+    ck_assert_int_eq((isnan(asin(num)) != 0), 1);
+  } else if (isinf((double)(s21_asin(num)))) {
+    ck_assert_int_eq((isinf(asin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_asin(num) - asin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(asin_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_asin(num)))) {
+    ck_assert_int_eq((isnan(asin(num)) != 0), 1);
+  } else if (isinf((double)(s21_asin(num)))) {
+    ck_assert_int_eq((isinf(asin(num)) != 0), 1);
   } else {
     long double condition = (s21_asin(num) - asin(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
@@ -506,6 +654,43 @@ START_TEST(sin_10) {
 }
 END_TEST
 
+START_TEST(sin_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_sin(num)))) {
+    ck_assert_int_eq((isnan(sin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sin(num) - sin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(sin_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_sin(num)))) {
+    ck_assert_int_eq((isnan(sin(num)) != 0), 1);
+  } else if (isinf((double)(s21_sin(num)))) {
+    ck_assert_int_eq((isinf(sin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sin(num) - sin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(sin_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_sin(num)))) {
+    ck_assert_int_eq((isnan(sin(num)) != 0), 1);
+  } else if (isinf((double)(s21_sin(num)))) {
+    ck_assert_int_eq((isinf(sin(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sin(num) - sin(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // COS
 START_TEST(cos_1) {
   long double num = -30071291.155215;
@@ -617,6 +802,43 @@ START_TEST(cos_10) {
 }
 END_TEST
 
+START_TEST(cos_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_cos(num)))) {
+    ck_assert_int_eq((isnan(cos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_cos(num) - cos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(cos_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_cos(num)))) {
+    ck_assert_int_eq((isnan(cos(num)) != 0), 1);
+  } else if (isinf((double)(s21_cos(num)))) {
+    ck_assert_int_eq((isinf(cos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_cos(num) - cos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(cos_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_cos(num)))) {
+    ck_assert_int_eq((isnan(cos(num)) != 0), 1);
+  } else if (isinf((double)(s21_cos(num)))) {
+    ck_assert_int_eq((isinf(cos(num)) != 0), 1);
+  } else {
+    long double condition = (s21_cos(num) - cos(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // TAN
 START_TEST(tan_1) {
   long double num = 180765.325288;
@@ -721,6 +943,43 @@ START_TEST(tan_10) {
   long double num = -14226370.134496;
   if (isnan((double)(s21_tan(num)))) {
     ck_assert_int_eq((isnan(tan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_tan(num) - tan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(tan_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_tan(num)))) {
+    ck_assert_int_eq((isnan(tan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_tan(num) - tan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(tan_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_tan(num)))) {
+    ck_assert_int_eq((isnan(tan(num)) != 0), 1);
+  } else if (isinf((double)(s21_tan(num)))) {
+    ck_assert_int_eq((isinf(tan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_tan(num) - tan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(tan_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_tan(num)))) {
+    ck_assert_int_eq((isnan(tan(num)) != 0), 1);
+  } else if (isinf((double)(s21_tan(num)))) {
+    ck_assert_int_eq((isinf(tan(num)) != 0), 1);
   } else {
     long double condition = (s21_tan(num) - tan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
@@ -888,6 +1147,43 @@ START_TEST(atan_10) {
   long double num = 994.919772;
   if (isnan((double)(s21_atan(num)))) {
     ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else if (isinf((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isinf(atan(num)) != 0), 1);
+  } else {
+    long double condition = (s21_atan(num) - atan(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(atan_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isnan(atan(num)) != 0), 1);
+  } else if (isinf((double)(s21_atan(num)))) {
+    ck_assert_int_eq((isinf(atan(num)) != 0), 1);
   } else {
     long double condition = (s21_atan(num) - atan(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
@@ -1156,6 +1452,84 @@ START_TEST(s21_exp_10) {
 }
 END_TEST
 
+START_TEST(s21_exp_nan) {
+  double num = S21_NAN;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_inf) {
+  double num = INFINITY;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
+START_TEST(s21_exp_neg_inf) {
+  double num = -INFINITY;
+  if (isnan(exp(num))) {
+    ck_assert_double_nan((double)s21_exp(num));
+  } else if (isinf(exp(num))) {
+    ck_assert_double_infinite((double)s21_exp(num));
+  } else {
+    double res_custom = s21_exp(num);
+    double res_orig = exp(num);
+    if (res_custom > 1e10) {
+      while (res_custom < 1e16) {
+        res_custom *= 10;
+        res_orig *= 10;
+      }
+      while (res_custom > 1e17) {
+        res_custom /= 10;
+        res_orig /= 10;
+      }
+      ck_assert_double_eq_tol(res_custom, res_orig, 1);
+    } else {
+      ck_assert_double_eq_tol(res_custom, res_orig, 1e-6);
+    }
+  }
+}
+END_TEST
+
 // ABS VLAD
 START_TEST(s21_abs_1) {
   int num = -4657;
@@ -1328,6 +1702,43 @@ START_TEST(fabsl_10) {
 }
 END_TEST
 
+START_TEST(fabsl_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else if (isinf((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isinf(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(fabsl_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isnan(fabsl(num)) != 0), 1);
+  } else if (isinf((double)(s21_fabs(num)))) {
+    ck_assert_int_eq((isinf(fabsl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_fabs(num) - fabsl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // LOG
 START_TEST(logl_1) {
   long double num = -388008.329732;
@@ -1439,6 +1850,47 @@ START_TEST(logl_10) {
 }
 END_TEST
 
+START_TEST(logl_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_log(num)))) {
+    ck_assert_int_eq((isnan(logl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_log(num) - logl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(logl_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(logl(num)))) {
+    // int aboba = isnan(logl(num));
+    // printf("%Lf\n%Lf\n", s21_log(num), logl(num));
+    ck_assert_ldouble_nan(s21_log(num));
+  } else if (isinf((double)(logl(num)))) {
+    // int aboba = isinf((double)s21_log(num));
+    // ck_assert_int_eq(!aboba, 1);
+    ck_assert_ldouble_infinite(s21_log(num));
+  } else {
+    long double condition = (s21_log(num) - logl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(logl_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_log(num)))) {
+    ck_assert_int_eq((isnan(logl(num)) != 0), 1);
+  } else if (isinf((double)(s21_log(num)))) {
+    ck_assert_int_eq((isinf(logl(num)) != 0), 1);
+  } else {
+    long double condition = (s21_log(num) - logl(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
 // SQRT
 START_TEST(sqrt_1) {
   long double num = -44.723864;
@@ -1543,6 +1995,43 @@ START_TEST(sqrt_10) {
   long double num = -38.569138;
   if (isnan((double)(s21_sqrt(num)))) {
     ck_assert_int_eq((isnan(sqrt(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sqrt(num) - sqrt(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(sqrt_nan) {
+  long double num = S21_NAN;
+  if (isnan((double)(s21_sqrt(num)))) {
+    ck_assert_int_eq((isnan(sqrt(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sqrt(num) - sqrt(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(sqrt_inf) {
+  long double num = INFINITY;
+  if (isnan((double)(s21_sqrt(num)))) {
+    ck_assert_int_eq((isnan(sqrt(num)) != 0), 1);
+  } else if (isinf((double)(s21_sqrt(num)))) {
+    ck_assert_int_eq((isinf(sqrt(num)) != 0), 1);
+  } else {
+    long double condition = (s21_sqrt(num) - sqrt(num));
+    ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
+  }
+}
+END_TEST
+
+START_TEST(sqrt_neg_inf) {
+  long double num = -INFINITY;
+  if (isnan((double)(s21_sqrt(num)))) {
+    ck_assert_int_eq((isnan(sqrt(num)) != 0), 1);
+  } else if (isinf((double)(s21_sqrt(num)))) {
+    ck_assert_int_eq((isinf(sqrt(num)) != 0), 1);
   } else {
     long double condition = (s21_sqrt(num) - sqrt(num));
     ck_assert_int_eq(((condition <= DIFF) && (condition >= -DIFF)), 1);
@@ -1671,6 +2160,127 @@ START_TEST(powl_10) {
 }
 END_TEST
 
+START_TEST(powl_nan) {
+  long double num1 = S21_NAN;
+  long double num2 = -0.349780;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_nan2) {
+  long double num1 = 1;
+  long double num2 = S21_NAN;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_nan3) {
+  long double num1 = 41241.22;
+  long double num2 = S21_NAN;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else {
+    printf("%Lf\n%Lf\n", powl(num1, num2), s21_pow(num1, num2));
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_inf) {
+  long double num1 = INFINITY;
+  long double num2 = 41271;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_inf2) {
+  long double num1 = 123;
+  long double num2 = INFINITY;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_inf3) {
+  long double num1 = INFINITY;
+  long double num2 = -INFINITY;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_neg_inf) {
+  long double num1 = -INFINITY;
+  long double num2 = 41271;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_neg_inf2) {
+  long double num1 = -INFINITY;
+  long double num2 = S21_NAN;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(powl_neg_inf3) {
+  long double num1 = 132;
+  long double num2 = -INFINITY;
+  long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  if (isnan((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+  } else if (isinf((double)(s21_pow(num1, num2)))) {
+    ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
+  } else {
+    ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
 int main(void) {
   Suite *s1 = suite_create("Core");
   TCase *tc1_1 = tcase_create("Core");
@@ -1689,6 +2299,9 @@ int main(void) {
   tcase_add_test(tc1_1, ceill_8);
   tcase_add_test(tc1_1, ceill_9);
   tcase_add_test(tc1_1, ceill_10);
+  tcase_add_test(tc1_1, ceill_nan);
+  tcase_add_test(tc1_1, ceill_inf);
+  tcase_add_test(tc1_1, ceill_neg_inf);
   // FLOOR
   tcase_add_test(tc1_1, floorl_1);
   tcase_add_test(tc1_1, floorl_2);
@@ -1700,6 +2313,9 @@ int main(void) {
   tcase_add_test(tc1_1, floorl_8);
   tcase_add_test(tc1_1, floorl_9);
   tcase_add_test(tc1_1, floorl_10);
+  tcase_add_test(tc1_1, floorl_nan);
+  tcase_add_test(tc1_1, floorl_inf);
+  tcase_add_test(tc1_1, floorl_neg_inf);
   // ACOS
   tcase_add_test(tc1_1, acos_1);
   tcase_add_test(tc1_1, acos_2);
@@ -1711,6 +2327,9 @@ int main(void) {
   tcase_add_test(tc1_1, acos_8);
   tcase_add_test(tc1_1, acos_9);
   tcase_add_test(tc1_1, acos_10);
+  tcase_add_test(tc1_1, acos_nan);
+  tcase_add_test(tc1_1, acos_inf);
+  tcase_add_test(tc1_1, acos_neg_inf);
   // SIN
   tcase_add_test(tc1_1, sin_1);
   tcase_add_test(tc1_1, sin_2);
@@ -1722,6 +2341,9 @@ int main(void) {
   tcase_add_test(tc1_1, sin_8);
   tcase_add_test(tc1_1, sin_9);
   tcase_add_test(tc1_1, sin_10);
+  tcase_add_test(tc1_1, sin_nan);
+  tcase_add_test(tc1_1, sin_inf);
+  tcase_add_test(tc1_1, sin_neg_inf);
   // COS
   tcase_add_test(tc1_1, cos_1);
   tcase_add_test(tc1_1, cos_2);
@@ -1733,6 +2355,9 @@ int main(void) {
   tcase_add_test(tc1_1, cos_8);
   tcase_add_test(tc1_1, cos_9);
   tcase_add_test(tc1_1, cos_10);
+  tcase_add_test(tc1_1, cos_nan);
+  tcase_add_test(tc1_1, cos_inf);
+  tcase_add_test(tc1_1, cos_neg_inf);
   // TAN
   tcase_add_test(tc1_1, tan_1);
   tcase_add_test(tc1_1, tan_2);
@@ -1744,6 +2369,9 @@ int main(void) {
   tcase_add_test(tc1_1, tan_8);
   tcase_add_test(tc1_1, tan_9);
   tcase_add_test(tc1_1, tan_10);
+  tcase_add_test(tc1_1, tan_nan);
+  tcase_add_test(tc1_1, tan_inf);
+  tcase_add_test(tc1_1, tan_neg_inf);
   // ASIN
   tcase_add_test(tc1_1, asin_1);
   tcase_add_test(tc1_1, asin_2);
@@ -1755,6 +2383,9 @@ int main(void) {
   tcase_add_test(tc1_1, asin_8);
   tcase_add_test(tc1_1, asin_9);
   tcase_add_test(tc1_1, asin_10);
+  tcase_add_test(tc1_1, asin_nan);
+  tcase_add_test(tc1_1, asin_inf);
+  tcase_add_test(tc1_1, asin_neg_inf);
   // ATAN
   tcase_add_test(tc1_1, atan_1);
   tcase_add_test(tc1_1, atan_2);
@@ -1766,6 +2397,9 @@ int main(void) {
   tcase_add_test(tc1_1, atan_8);
   tcase_add_test(tc1_1, atan_9);
   tcase_add_test(tc1_1, atan_10);
+  tcase_add_test(tc1_1, atan_nan);
+  tcase_add_test(tc1_1, atan_inf);
+  tcase_add_test(tc1_1, atan_neg_inf);
   // EXP VLAD
   tcase_add_test(tc1_1, s21_exp_1);
   tcase_add_test(tc1_1, s21_exp_2);
@@ -1777,6 +2411,9 @@ int main(void) {
   tcase_add_test(tc1_1, s21_exp_8);
   tcase_add_test(tc1_1, s21_exp_9);
   tcase_add_test(tc1_1, s21_exp_10);
+  tcase_add_test(tc1_1, s21_exp_nan);
+  tcase_add_test(tc1_1, s21_exp_inf);
+  tcase_add_test(tc1_1, s21_exp_neg_inf);
   // ABS VLAD
   tcase_add_test(tc1_1, s21_abs_1);
   tcase_add_test(tc1_1, s21_abs_2);
@@ -1799,6 +2436,9 @@ int main(void) {
   tcase_add_test(tc1_1, fabsl_8);
   tcase_add_test(tc1_1, fabsl_9);
   tcase_add_test(tc1_1, fabsl_10);
+  tcase_add_test(tc1_1, fabsl_nan);
+  tcase_add_test(tc1_1, fabsl_inf);
+  tcase_add_test(tc1_1, fabsl_neg_inf);
   // LOG
   tcase_add_test(tc1_1, logl_1);
   tcase_add_test(tc1_1, logl_2);
@@ -1810,6 +2450,9 @@ int main(void) {
   tcase_add_test(tc1_1, logl_8);
   tcase_add_test(tc1_1, logl_9);
   tcase_add_test(tc1_1, logl_10);
+  tcase_add_test(tc1_1, logl_nan);
+  tcase_add_test(tc1_1, logl_inf);
+  tcase_add_test(tc1_1, logl_neg_inf);
   // SQRT
   tcase_add_test(tc1_1, sqrt_1);
   tcase_add_test(tc1_1, sqrt_2);
@@ -1821,6 +2464,9 @@ int main(void) {
   tcase_add_test(tc1_1, sqrt_8);
   tcase_add_test(tc1_1, sqrt_9);
   tcase_add_test(tc1_1, sqrt_10);
+  tcase_add_test(tc1_1, sqrt_nan);
+  tcase_add_test(tc1_1, sqrt_inf);
+  tcase_add_test(tc1_1, sqrt_neg_inf);
   // POW
   tcase_add_test(tc1_1, powl_1);
   tcase_add_test(tc1_1, powl_2);
@@ -1832,6 +2478,15 @@ int main(void) {
   tcase_add_test(tc1_1, powl_8);
   tcase_add_test(tc1_1, powl_9);
   tcase_add_test(tc1_1, powl_10);
+  tcase_add_test(tc1_1, powl_nan);
+  tcase_add_test(tc1_1, powl_nan2);
+  tcase_add_test(tc1_1, powl_nan3);
+  tcase_add_test(tc1_1, powl_inf);
+  tcase_add_test(tc1_1, powl_inf2);
+  tcase_add_test(tc1_1, powl_inf3);
+  tcase_add_test(tc1_1, powl_neg_inf);
+  tcase_add_test(tc1_1, powl_neg_inf2);
+  tcase_add_test(tc1_1, powl_neg_inf3);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);
