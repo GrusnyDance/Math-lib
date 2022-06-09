@@ -8,6 +8,7 @@
 #define S21_EPS 1e-17
 #define S21_LN10 2.3025850929940456
 #define S21_LN2 0.6931471805599453
+#define S21_ISNAN(x) (!(x >= 0) && !(x < 0))
 
 int s21_abs(int x);
 
