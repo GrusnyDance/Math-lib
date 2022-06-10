@@ -1349,7 +1349,7 @@ START_TEST(s21_exp_6) {
 END_TEST
 
 START_TEST(s21_exp_7) {
-  double num = 78.413939;
+  double num = -78.413939;
   if (isnan(exp(num))) {
     ck_assert_double_nan((double)s21_exp(num));
   } else if (isinf(exp(num))) {
@@ -2165,7 +2165,7 @@ START_TEST(powl_nan) {
   long double num2 = -0.349780;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
-    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+    ck_assert_ldouble_nan(powl(num1, num2));
   } else {
     ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
   }
@@ -2177,7 +2177,7 @@ START_TEST(powl_nan2) {
   long double num2 = S21_NAN;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
-    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+    ck_assert_ldouble_nan(powl(num1, num2));
   } else {
     ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
   }
@@ -2185,11 +2185,11 @@ START_TEST(powl_nan2) {
 END_TEST
 
 START_TEST(powl_nan3) {
-  long double num1 = 41241.22;
+  long double num1 = 32424;
   long double num2 = S21_NAN;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
-    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+    ck_assert_ldouble_nan(powl(num1, num2));
   } else {
     printf("%Lf\n%Lf\n", powl(num1, num2), s21_pow(num1, num2));
     ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
@@ -2226,11 +2226,12 @@ START_TEST(powl_inf2) {
 END_TEST
 
 START_TEST(powl_inf3) {
-  long double num1 = INFINITY;
-  long double num2 = -INFINITY;
+  long double num1 = NAN;
+  long double num2 = INFINITY;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
+  printf("%Lf\n%Lf\n", powl(num1, num2), s21_pow(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
-    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+    ck_assert_ldouble_nan(powl(num1, num2));
   } else if (isinf((double)(s21_pow(num1, num2)))) {
     ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
   } else {
@@ -2244,7 +2245,7 @@ START_TEST(powl_neg_inf) {
   long double num2 = 41271;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
-    ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
+    ck_assert_ldouble_nan(powl(num1, num2));
   } else if (isinf((double)(s21_pow(num1, num2)))) {
     ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
   } else {

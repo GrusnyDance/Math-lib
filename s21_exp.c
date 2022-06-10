@@ -10,5 +10,5 @@ long double s21_exp(double x) {
     result += temp;
     temp = (temp * x) / ++flag;
   }
-  return result;
+  return x < 0 ? 1 / result : result;
 }
