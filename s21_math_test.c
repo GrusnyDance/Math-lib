@@ -2191,7 +2191,6 @@ START_TEST(powl_nan3) {
   if (isnan((double)(s21_pow(num1, num2)))) {
     ck_assert_ldouble_nan(powl(num1, num2));
   } else {
-    printf("%Lf\n%Lf\n", powl(num1, num2), s21_pow(num1, num2));
     ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
   }
 }
@@ -2226,10 +2225,9 @@ START_TEST(powl_inf2) {
 END_TEST
 
 START_TEST(powl_inf3) {
-  long double num1 = NAN;
-  long double num2 = INFINITY;
+  long double num1 = INFINITY;
+  long double num2 = -INFINITY;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
-  printf("%Lf\n%Lf\n", powl(num1, num2), s21_pow(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
     ck_assert_ldouble_nan(powl(num1, num2));
   } else if (isinf((double)(s21_pow(num1, num2)))) {
