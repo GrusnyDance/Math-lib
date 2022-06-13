@@ -19,7 +19,7 @@ START_TEST(ceill_1) {
 END_TEST
 
 START_TEST(ceill_2) {
-  long double num = -947.970166;
+  long double num = 1;
   if (isnan((double)(s21_ceil(num)))) {
     ck_assert_int_eq((isnan(ceill(num)) != 0), 1);
   } else {
@@ -244,7 +244,7 @@ START_TEST(floorl_8) {
 END_TEST
 
 START_TEST(floorl_9) {
-  long double num = 628.530256;
+  long double num = -628;
   if (isnan((double)(s21_floor(num)))) {
     ck_assert_int_eq((isnan(floorl(num)) != 0), 1);
   } else {
@@ -326,7 +326,7 @@ START_TEST(acos_2) {
 END_TEST
 
 START_TEST(acos_3) {
-  long double num = 37.018012;
+  long double num = 1;
   if (isnan((double)(s21_acos(num)))) {
     ck_assert_int_eq((isnan(acos(num)) != 0), 1);
   } else {
@@ -348,7 +348,7 @@ START_TEST(acos_4) {
 END_TEST
 
 START_TEST(acos_5) {
-  long double num = 89.515404;
+  long double num = -1;
   if (isnan((double)(s21_acos(num)))) {
     ck_assert_int_eq((isnan(acos(num)) != 0), 1);
   } else {
@@ -463,7 +463,7 @@ START_TEST(asin_1) {
 END_TEST
 
 START_TEST(asin_2) {
-  long double num = 571305.980706;
+  long double num = -1;
   if (isnan((double)(s21_asin(num)))) {
     ck_assert_int_eq((isnan(asin(num)) != 0), 1);
   } else {
@@ -496,7 +496,7 @@ START_TEST(asin_4) {
 END_TEST
 
 START_TEST(asin_5) {
-  long double num = -701643.713611;
+  long double num = 1;
   if (isnan((double)(s21_asin(num)))) {
     ck_assert_int_eq((isnan(asin(num)) != 0), 1);
   } else {
@@ -1078,7 +1078,7 @@ START_TEST(atan_3) {
 END_TEST
 
 START_TEST(atan_4) {
-  long double num = -707.016726;
+  long double num = 0.5;
   if (isnan((double)(s21_atan(num)))) {
     ck_assert_int_eq((isnan(atan(num)) != 0), 1);
   } else {
@@ -1089,7 +1089,7 @@ START_TEST(atan_4) {
 END_TEST
 
 START_TEST(atan_5) {
-  long double num = -830.112000;
+  long double num = -1;
   if (isnan((double)(s21_atan(num)))) {
     ck_assert_int_eq((isnan(atan(num)) != 0), 1);
   } else {
@@ -1100,7 +1100,7 @@ START_TEST(atan_5) {
 END_TEST
 
 START_TEST(atan_6) {
-  long double num = 307.617397;
+  long double num = 1;
   if (isnan((double)(s21_atan(num)))) {
     ck_assert_int_eq((isnan(atan(num)) != 0), 1);
   } else {
@@ -2125,8 +2125,8 @@ START_TEST(powl_7) {
 END_TEST
 
 START_TEST(powl_8) {
-  long double num1 = -9.647734;
-  long double num2 = 2.021467;
+  long double num1 = -2;
+  long double num2 = 234.3;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
     ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
@@ -2137,7 +2137,7 @@ START_TEST(powl_8) {
 END_TEST
 
 START_TEST(powl_9) {
-  long double num1 = -1.321712;
+  long double num1 = 0;
   long double num2 = 2.457203;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
@@ -2149,8 +2149,8 @@ START_TEST(powl_9) {
 END_TEST
 
 START_TEST(powl_10) {
-  long double num1 = 6.233734;
-  long double num2 = -0.349780;
+  long double num1 = 6.52355;
+  long double num2 = -2;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
     ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
@@ -2197,8 +2197,8 @@ START_TEST(powl_nan3) {
 END_TEST
 
 START_TEST(powl_inf) {
-  long double num1 = INFINITY;
-  long double num2 = 41271;
+  long double num1 = -INFINITY;
+  long double num2 = 41271.435;
   long double condition = (s21_pow(num1, num2) - powl(num1, num2));
   if (isnan((double)(s21_pow(num1, num2)))) {
     ck_assert_int_eq((isnan(powl(num1, num2)) != 0), 1);
@@ -2276,6 +2276,15 @@ START_TEST(powl_neg_inf3) {
     ck_assert_int_eq((isinf(powl(num1, num2)) != 0), 1);
   } else {
     ck_assert_int_eq((condition <= DIFF && condition >= -DIFF), 1);
+  }
+}
+END_TEST
+
+START_TEST(fmod_test) {
+  long double num1 = 0;
+  long double num2 = 123;
+  if (isnan((double)(s21_fmod(num2, num1)))) {
+    ck_assert_int_eq((isnan(fmod(num2, num1)) != 0), 1);
   }
 }
 END_TEST
@@ -2486,6 +2495,8 @@ int main(void) {
   tcase_add_test(tc1_1, powl_neg_inf);
   tcase_add_test(tc1_1, powl_neg_inf2);
   tcase_add_test(tc1_1, powl_neg_inf3);
+
+  tcase_add_test(tc1_1, fmod_test);
 
   srunner_run_all(sr, CK_ENV);
   nf = srunner_ntests_failed(sr);

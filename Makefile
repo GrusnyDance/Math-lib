@@ -39,7 +39,7 @@ s21_math_gcov.a: $(OBJECTS_GCOV)
 s21_math.a: $(OBJECTS)
 	$(AR) $@ $(OBJECTS)
 
-test: gcov_obj/s21_math_test.o s21_math_gcov.a
+test: obj/s21_math_test.o s21_math_gcov.a
 	$(CC) $(CFLAGS) $^ -o $@ $(LCHECK) $(LDFLAGS) $(GCOVFLAGS)
 	./test
 

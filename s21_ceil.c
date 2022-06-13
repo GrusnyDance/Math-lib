@@ -2,7 +2,7 @@
 
 long double s21_ceil(double x) {
   long double res = 0;
-  if (__builtin_isnan(x) || __builtin_isinf(x)) {
+  if (S21_ISNAN(x) || S21_ISINF(x)) {
     res = x;
   } else {
     if (x >= 0) {
